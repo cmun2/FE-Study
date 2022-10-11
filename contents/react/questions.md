@@ -108,6 +108,20 @@ Reference:
 <summary>실제DOM과 가상DOM 원리(React)</summary>
 
 <img src="./img/DOM.png" style="width:50%" />
-<img src="./img/VirtualDOM.jpeg" style="width:50%" />
+<img src="./img/VirtualDom.jpeg" style="width:50%" />
 
 </details>
+
+## 5
+
+Javascript에서는 우리가 특정 DOM을 선택해야 하는 상황에는 getElementById, querySelector와 같은 DOM Selector 함수를
+사용해서 DOM을 선택한다. 리액트에서도 스크롤바 위치를 가져오거나 선택하고, 포커스를 설정하는 등 DOM을 직접 선택해야
+하는 상황이 있고 특정 DOM을 감시하고 가리킬 때 useRef Hook을 사용한다. 그리고 해당 DOM의 특정 값을 가져올 때
+.current.value, .current.focus등의 코드로 해당 DOM의 값을 불러올 수 있습니다.
+
+- [useRef Code 예시](./code/useRef.jsx)
+
+Reference:
+
+- [후크 API 참조](https://reactjs.org/docs/hooks-reference.html#useref)
+- [useRef로 특정 DOM 선택하기](https://react.vlpt.us/basic/10-useRef.html)
