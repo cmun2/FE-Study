@@ -63,14 +63,51 @@ Redux외에 여러 상태관리 라이브러리가 있지만 그 중 Recoil에 �
 
 Recoil의 selector를 활용하여 쉽게 비동기 데이터를 가져올 수 있으며 추가적인 라이브러리 설치가 불필요해 프로젝트 번들이 가벼우며
 기존의 Redux의 중앙집중식으로 상태관리가 이루어지며 단방향인 Flux 아미텍처와 달리 저장소 개념보다 작은 상태 단위인 atom이라는
-상태 단위로 상태를 관리하여 컴포넌트는 이 atom을 구독하기만 하면 된다는 큰 차이점을 가지고 있습니다.
+상태 단위로 상태를 관리하여 컴포넌트는 이 atom을 구독하기만 하면 된다는 큰 차이점을 가지고 있다.
 
 - [Recoil Code 예시](./code/recoil.jsx)
 
 <details markdown="1">
 <summary>Redux와 Recoil</summary>
 
-<img src="./img/Redux.png">
-<img src="./img/Recoil.png">
+<img src="./img/Redux.png" style="width:50%" />
+<img src="./img/Recoil.png" style="width:50%" />
+
+</details>
+
+Reference:
+
+- [Redux vs Recoil: which should you use?](https://www.emgoto.com/redux-vs-recoil/)
+- [Reducing Boilerplate](https://redux.js.org/usage/reducing-boilerplate)
+- [Recoil, 리액트의 상태관리 라이브러리](https://tech.osci.kr/2022/06/16/recoil-state-management-of-react/)
+
+## 4
+
+DOM은 Document Object Model의 약자로 HTML 문서에 있는 모든 node의 구조적 표현이다. DOM은 어플리케이션의 UI를
+나타내며 이러한 웹페이지의 UI를 동적으로 변경하려면 DOM 조작이 필요하다. DOM은 스크립트가 문서의 내용, 스타일 및
+구조를 업데이트 할 수 있도록 하는 인터페이스이다.
+
+실제 DOM은 논리적 트리가 있는 문서라고 불리며 트리의 각 분기는 노드로 끝나며 각 노드에는 객체가 포함이 된다.
+DOM은 트리와 같은 구조로 인해 빠르지만 변경 후에는 업데이트가 된 요소와 자식들을 다시 렌더링하여 어플리케이션
+UI를 업데이트해야 하여 UI를 재렌더링시 모든 UI 구성 요소가 느려진다. 모든 DOM 업데이트에 대해 렌더링이 되므로
+실제 DOM은 업데이트를 수신하는 특정 항목뿐만이 아닌 전체 목록을 렌더링하게 된다.
+
+이러한 문제를 해결하고자 React에서는 모든 DOM객체에 해당하는 "가상 DOM객체"가 있다. 가상 DOM객체는 실제 DOM객체와
+동일한 속성을 갖지만 화면에 있는 내용을 직접 변경할 수는 없다. 가상DOM을 조작하는 것은 화면에 직접 그리지 않기
+때문에 실제DOM보다 훨씬 빠르며 React는 우선 모든 단일 가상 DOM을 업데이트하며 이후 가상 DOM이 업데이트 되면 그
+전 가상 DOM과 비교하여 어떤 가상 DOM 요소가 변경되었는지 알아내며 해당 요소만 업데이트 하게 하는 "diffing"이라는
+프로세스를 실행합니다.
+
+Reference:
+
+- [The Document Object Model](https://eloquentjavascript.net/14_dom.html)
+- [React: The Virtual DOM](https://www.codecademy.com/article/react-virtual-dom)
+- [Difference between Virtual DOM and Real DOM](https://www.geeksforgeeks.org/differnece-between-virtual-dom-and-real-dom/)
+
+<details markdown="1">
+<summary>실제DOM과 가상DOM 원리(React)</summary>
+
+<img src="./img/DOM.png" style="width:50%" />
+<img src="./img/VirtualDOM.jpeg" style="width:50%" />
 
 </details>
