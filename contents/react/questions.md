@@ -125,3 +125,21 @@ Reference:
 
 - [후크 API 참조](https://reactjs.org/docs/hooks-reference.html#useref)
 - [useRef로 특정 DOM 선택하기](https://react.vlpt.us/basic/10-useRef.html)
+
+## 6
+
+useEffect Hook은 의존성배열(dependency array)내에 지정된 값의 변화가 일어났을 때 실행이 된다. 이러한 특성으로 주로
+컴포넌트가 마운트가 될 때 API를 통해 데이터를 가져오거나 state 또는 props 값이 변경될 때 특정 함수를 실행시키는 작업을
+하는데 사용이 된다.
+
+컴포넌트 구조가 top -> bottom으로 가는 구조 App > FirstBox > SecondBox일때 useEffect는 컴포넌트가 렌더링이 된 후에 실행이
+되기 때문에 App이 render가 되기 위해서는 FirstBox가 렌더링이 되어야 하고 FirstBox가 완전히 렌더링이 되기 위해서는 SecondBox가
+렌더링이 되어야 한다. 그렇게 1 -> 2 -> 3 순서대로 실행이 되는 것이 아닌 3 -> 2 -> 1 순서대로 실행이 된다.
+
+- [useEffect Code 순서](./code/useEffect.jsx)
+
+Reference:
+
+- [useEffect의 동작 원리](https://jungpaeng.tistory.com/92)
+- [What's useEffect execution order and its internal clean-up logic in react hooks?](https://stackoverflow.com/questions/53781632/whats-useeffect-execution-order-and-its-internal-clean-up-logic-in-react-hooks)
+- [Library Hooks](https://reactjs.org/docs/hooks-reference.html#library-hooks)
