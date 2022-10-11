@@ -24,8 +24,8 @@ React에서의 상태관리란 데이터에 맞게 적절하게 UX와 UI를 설�
 있습니다.
 
 Reference:
-[프론트엔드의 상태관리란 무엇인가?]("https://medium.com/wematch/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%EC%9D%98-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-5ff888dab7ad")
-[React state management: What is it and why to use it?]("https://www.loginradius.com/blog/engineering/react-state-management/")
+[프론트엔드의 상태관리란 무엇인가?](https://medium.com/wematch/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C%EC%9D%98-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-5ff888dab7ad)
+[React state management: What is it and why to use it?](https://www.loginradius.com/blog/engineering/react-state-management/)
 [리액트 상태 관리 가이드](https://www.stevy.dev/react-state-management-guide/)
 
 ## 2
