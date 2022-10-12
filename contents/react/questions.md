@@ -959,3 +959,69 @@ Reference:
 [HTTP vs. HTTPS: What are the differences?](https://www.cloudflare.com/learning/ssl/why-is-http-not-secure/)
 
 [🔝 목차로 돌아가기](#table-of-contents)
+
+## 31
+
+웹 프로토콜은 웹에서 쓰이는 통신규약으로 , 통신규약이란 통신을 할때 하는 약속을 의미한다.
+
+<details markdown="1">
+<summary>Protocol</summary>
+
+<img src="./img/protocol.png" style="width:50%" />
+
+</details>
+
+각각의 역할
+
+- protocol : 문서에 접근하기 위해 사용하는 프로토콜 이름
+- computer_name : 문서가 있는 컴퓨터(서버)의 도메인 이름
+- port : 서버가 어떤 포트 숫자를 바라보고 있는지 (선택)
+- document_name : 서버 컴퓨터에 있는 특정 문서의 이름
+- parameters: 페이지에 넘기는 변수 (선택)
+
+이렇게 위 URL(Uniform Resource Locator)은 웹에서 웹 페이지를 정의하고 접근하기 위해 사용이 된다.
+
+HTTP 는 브라우저가 웹 서버와 통신하기 위해 사용하는 주요 프로토콜이다. HTTP 4가지 요청 형식은 GET, HEAD(상태 정보를 요청. GET 과 동일한 형태로 응답을 하지만, 문서를 복제하지는 않는다.), POST, PUT 등이 있다.
+
+HTTP 응답 헤더의 일반적인 형태는
+
+```
+HTTP/1.0 status_code status_string CRLF
+Server: server_identification CRLF
+Last-Modified : date_document_was_changed CRLF
+Content-Length : datasize CRLF
+Content-Type : document_type CRLF
+CRLF
+```
+
+- status_code : 상태를 나타내는 숫자 값
+- status_string : 사람이 식별 가능한 상태 문자 값
+- server_identification : 서버정보 설명
+- datasize : 데이터의 크기 (바이트 단위)
+- document_type : 문서 유형 (html 문서는 text/html, jpeg 파일은 image/jpeg)
+
+웹 페이지 성능을 최적화 하려면 캐시를 이용한다. 예를 들어, 용량이 큰 이미지가 많은 사이트를 반복 접속하는 경우에 다운로드 시간과 HTTP GET 요청수를 줄이기 위해 해당 이미지를 사용자의 디스크에 저장하고 캐시로 사용한다.
+
+FTP (File Transfer Protocol)은 파일이 문서, 이미지, 프로그램 등 다양한 형태의 데이터를 갖고 있을 수 있기 때문에 컴퓨터 간의 파일 교환시에 호환성을 보장하는 프로토콜이 필요하기에 생겼으며 파일 전송에 대한 규약인 FTP의 특성은 다음과 같다.
+
+- 어떤 형태의 데이터든 전송이 가능하다.
+- 파일을 다운로드 & 업로드 할 수 있다.
+- 파일에 대한 권한을 설정할 수 있다.
+- ASCII 문자로 메시지가 교환된다.
+- 파일을 검색하고 조회할 수 있다.
+
+HTTP 와는 다르게 FTP 는 클라이언트에서 서버로 한번 연결을 맺어놓은 상태에서 파일을 주고 받는 것이 아니라 클라이언트에서 서버와의 연결이 맺어지면, 해당 연결은 명령어 입력을 위해 남겨놓고 파일을 보낼 때 새로운 연결을 추가하여 파일을 전송한다.
+
+우리가 많이 알고있는 IP (Internet Protocol)는 각각의 패킷을 IP주소와 MAC 주소를 통해 상대방에게 전달하는 역할을 한다.
+
+- IP 주소: 각 노드에 부여된 주소
+- MAC 주소: 각 네트워크 카드에 할당된 '고유의 주소'
+- ARP: 유동적인 IP주소를 고유주소인 MAC 주소로 변환하여 목적지를 찾아간다.
+
+DNS (Domain Name Server)는 숫자로 되어있는 IP주소를 우리가 기억하기 쉽게 '문자'로 매핑해주는 시스템이며 DNS는 도메인 주소를 IP 주소로 변환해주는 역할을 하기 때문에 , 유저들은 naver.com / google.com 과 같이 입력만해도 해당 사이트에 접근할 수 있다.
+
+Reference:
+[웹 프로토콜](https://velog.io/@st2702/%EC%9B%B9-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C)
+[웹 개발자를 위한 Web Protocols 정리](https://joshua1988.github.io/web-development/web-protocols/)
+
+[🔝 목차로 돌아가기](#table-of-contents)
