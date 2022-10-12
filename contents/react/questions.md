@@ -360,3 +360,31 @@ Reference:
 
 [호이스팅](https://developer.mozilla.org/ko/docs/Glossary/Hoisting)
 [호이스팅(Hoisting)이란?](https://hanamon.kr/javascript-%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85%EC%9D%B4%EB%9E%80-hoisting/)
+
+[🔝 목차로 돌아가기](#table-of-contents)
+
+## 14
+
+운영체제는 프로그램을 메모리의 적당한 위치로 가져온다. 또한 PCB(Process Control Control)라는 제어블록을 생성하며 PCB에는 프로세스 실행에 필요한 여러가지 정보가 담겨있다. 비유한다면 프로세스는 요리를 만드는 과정이며 PCB는 요리를 만들 때 고려할 사항을 적어놓은 주문서라고 비유할 수 있다. 오늘 날의 프로세스는 효율적인 처리를 위해 다양한 상태를 가지고 있으며 그 중 생성상태는 프로그램이 메모리에 올라오고 PCB를 할당받은 상태이다. 생성된 프로세스는 바로 실행되는 것이 아닌 준비 상태가 되어 자신의 순서를 기다리게 된다
+(메모리 할당 & PCB 생성)
+
+일반적인 프로세스 생성 과정
+
+> 1. PCB(Process Control Block)가 생성되며 OS가 실행한 프로그램의 코드를 읽어들여 프로세스에 할당된 메모리의 Text segment에 저장한다.
+>    초기화된 전역 변수 및 static 변수를 data segment에 할당.
+>    HEAP과 Stack은 초기 메모리 주소만 초기화됨.
+>    PCB에 여러 정보가 기록되면 Ready Queue에서 CPU를 할당받기까지 대기한다.
+
+<details markdown="1">
+<summary>Process Cycle Example</summary>
+
+<img src="./img/processCycle.png" style="width:50%" />
+
+</details>
+
+Reference:
+[프로세스와 PCB](https://velog.io/@dbstjrwnekd/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%99%80-PCB)
+
+[🔝 목차로 돌아가기](#table-of-contents)
+
+## 15
