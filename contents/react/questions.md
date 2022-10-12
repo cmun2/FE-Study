@@ -308,3 +308,55 @@ useLayoutEffect는 components들이 render된 후 실행되며 그 이후에 pai
 Reference:
 
 [What is the real difference between React useEffect and useLayoutEffect?](https://pubudu2013101.medium.com/what-is-the-real-difference-between-react-useeffect-and-uselayouteffect-51723096dc19)
+
+[🔝 목차로 돌아가기](#table-of-contents)
+
+## 12
+
+클로저는 자바스크립트 고유의 개념이 아니라 함수를 일급 객체로 취급하는 함수형 프로그래밍 언어에서 사용되는 중요한 특성이다. 클로저에 대해 MDN은 아래와 같이 정의하고 있다
+
+> “A closure is the combination of a function and the lexical environment within which that function was declared.”
+> 클로저는 함수와 그 함수가 선언됐을 때의 렉시컬 환경(Lexical environment)과의 조합이다.
+
+클로저는 반환된 내부함수가 자신이 선언됐을때의 환경인 스코프를 기억하여 자신이 선언됐을 때의 환경(스코프) 밖에서 호출되어도 그 환경(스코프)에 접근할 수 있는 함수를 말한다. 이를 쉽게 풀자면 클로저는 자신이 생성될 때의 환경을 기억하는 함수다.
+
+- [Closure 코드](./code/closure.js)
+
+displayName()함수가 실행되기 전에 외부함수인 makeFunc()로부터 리턴되어 myFunc 변수에 저장된다. makeFunc() 실행이 끝나면(displayName함수가 리턴되고 나면) name 변수에 더 이상 접근할 수 없게 될 것으로 예상하는 것이 일반적이지만 위의 예시와 같이 자바스크립트는 함수를 리턴하고, 리턴하는 함수가 클로저를 형성하는 예시일경우 displayName의 인스턴스는 변수 name 이 있는 어휘적 환경에 대한 참조를 유지한다. 이런 이유로 myFunc가 호출될 때 변수 name은 사용할 수 있는 상태로 남게 되고 "Mozilla" 가 alert 에 전달된다.
+
+클로저는 어떤 한 데이터와 그 데이터를 조작하는 함수를 연관시켜주기에 용이하다. 이것은 객체가 어떤 데이터와(그 객체의 속성) 하나 혹은 그 이상의 메소드들을 연관시킨다는 점에서 객체지향 프로그래밍과 같은 맥락에 있다. 결론적으로 오직 하나의 메소드를 가지고 있는 객체를 일반적으로 사용하는 모든 곳에 클로저를 사용할 수 있다.
+
+reference:
+
+[클로저](https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures)
+[클로저(closure)의 개념](https://poiemaweb.com/js-closure)
+
+[🔝 목차로 돌아가기](#table-of-contents)
+
+## 13
+
+Javascript(interpreter 언어 - 개발자 도구 컨솔에서 스크립트를 작성해 실행하는데 컴파일이 필요하지않다)에서 호이스팅(hoisting)이란 인터프리터가 변수와 함수의 메모리 공간을 선언 전에 미리 할당하는 것을 의미한다. var로 선언한 경우에는 호이스팅 시 undefined로 변수를 초기화하며 let 또는 const로 선언한 변수의 경우에는 호이스팅 시 변수를 초기화 하지 않는다.
+
+- [Hoisting 코드](./code/hoisting.js)
+
+예를 들어 위의 코드 처럼 일반적으로는 함수를 선언한 후 함수를 호출하는 코드를 뒤에 적는게 일반적으로 보이지만 Javascript는 함수의 코드를 실행하기 전에 함수선언에 대한 메모리부터 할당하기 때문에 함수를 호출하는 코드를 함수 선언보다 앞서 배치할 수 있다.
+
+JavaScript는 초기화를 제외한 선언만 호이스팅하기에 변수를 먼저 사용하고 그 후에 선언 및 초기화가 나타나면 사용하는 시점의 변수는 기본 초기화 상태이다.
+
+```jsx
+console.log(num); // 호이스팅한 var 선언으로 인해 undefined 출력
+var num; // 선언
+num = 6; // 초기화
+```
+
+하지만 아래와 같이 선언 없이 초기화만 존재할 경우 ReferenceError 예외가 발생하게 된다. 그리고 let과 const로 선언한 변수도 호이스팅의 대상이지만 var와 달리 hoisting시에는 undefined로 변수를 초기화하지 않기 때문에 변수의 초기화를 수행하기 전에 읽는 코드가 먼저 나타날 시 예외 에러가 발생하게 된다. 이는 해당 let,, const로 선언된 변수는 스코프의 시작에서 변수의 선언까지 일시적 사각지대(Temporal Dead Zone;TDZ)에 빠지게 되기 때문이다.
+
+```jsx
+console.log(num); // ReferenceError
+num = 6; // 초기화
+```
+
+Reference:
+
+[호이스팅](https://developer.mozilla.org/ko/docs/Glossary/Hoisting)
+[호이스팅(Hoisting)이란?](https://hanamon.kr/javascript-%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85%EC%9D%B4%EB%9E%80-hoisting/)
