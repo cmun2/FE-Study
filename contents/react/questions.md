@@ -371,9 +371,9 @@ Reference:
 일반적인 프로세스 생성 과정
 
 > 1. PCB(Process Control Block)가 생성되며 OS가 실행한 프로그램의 코드를 읽어들여 프로세스에 할당된 메모리의 Text segment에 저장한다.
->    초기화된 전역 변수 및 static 변수를 data segment에 할당.
->    HEAP과 Stack은 초기 메모리 주소만 초기화됨.
->    PCB에 여러 정보가 기록되면 Ready Queue에서 CPU를 할당받기까지 대기한다.
+> 2. 초기화된 전역 변수 및 static 변수를 data segment에 할당.
+> 3. HEAP과 Stack은 초기 메모리 주소만 초기화됨.
+> 4. PCB에 여러 정보가 기록되면 Ready Queue에서 CPU를 할당받기까지 대기한다.
 
 <details markdown="1">
 <summary>Process Cycle Example</summary>
