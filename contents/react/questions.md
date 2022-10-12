@@ -643,3 +643,109 @@ Reference:
 [HTTP Request Methods](https://www.w3schools.com/tags/ref_httpmethods.asp)
 
 [🔝 목차로 돌아가기](#table-of-contents)
+
+## 22
+
+Webpack을 사용해본적이 있다. 우선 webpack은 모듈 번들러이다. 모듈번들러란 자바스크립트 모듈을 브라우저에서 실행할 수 있게 단일 자바스크립트 파일로 묶어주는 즉 번들링 작업을 해주는 도구이다. 예를들어 아래와 같은 자바스크립트 파일 구성이 있을 때
+
+```js
+<html>
+  <script src=""></script>
+  <script src=""></script>
+  <script src=""></script>
+  <script src=""></script>
+  <script src=""></script>
+</html>
+```
+
+만약 따로 번들링을 하지 않을 시 이 애플리케이션을 실행하기 위해서는 별도의 5번의 http 요청을 보내야 한다. 그리고 각각의 코드의 종속성 관계를 관리하여 종속성 순서대로 모듈을 로드해야 한다. 이러한 단점을 해결하기 위해 하나로 묶어주면 파일의순서 즉 종속성 순서를 유지하면서 파일간의 이름 충돌까지 막게 해주는 것이 바로 모듈 번들러이며, 이와 같은 모듈 번듈러 중 하나가 webpack이다.
+
+```js
+<html>
+  <script src="/dist/bundle.js"></script>
+</html>
+```
+
+webpack은 최신 자바스크립트 애플리케이션을 위한 정적 모듈 번들러이며 웹팩이 애플리케이션을 처리할 때 프로젝트에 필요한 모든 모듈을
+매핑하고 하나 이상의 번들을 생성하는 종속성 그래프를 내부적으로 빌드를 하게 된다.
+
+<details markdown="1">
+<summary>webpack 원리</summary>
+
+<img src="./img/webpack.png" style="width:50%" />
+
+</details>
+
+웹팩에는 우선 6가지의 특징을 알아야하는데 Entry, Output, Loaders, Plugins, Mode, Browser Compatibility 등이 있다.
+
+우선 Entry는 종속성 그래프를 구축하기 위한 시작점이다. 웹팩은 이 entry point에서 모든 다른 모듈과 라이브러리에 의존하는지 재귀적으로 반복을 하게 되며 각 모듈이 서로 어떻게 의존하는지 파악을 하게 된다. 웹팩이 파악한 이 내용을 종속성 그래프라고 하며 webpack.config.js파일에서 기본값을 바꿀 수 있다.
+
+```jsx
+module.exports = {
+  entry: "./path/to/my/entry/file.js",
+};
+```
+
+Output은 웹팩에게 번들 파일을 어디에 생성할 것이며 어떤 이름으로 할 것인지를 알려준다. main output파일은 값이 ./dist/main.js이며 다른 생성된 파일일 경우, ./dist 파일이 기본 설정이다.
+
+```jsx
+const path = require("path");
+
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
+  },
+};
+```
+
+Loaders는 기본적으로 웹팩은 Javascript 및 JSON 파일만 읽을 수 있지만 웹팩이 다른 유형의 파일을 처리하고, 이를 애플리케이션에서 사용하고 종속성 그래프에 추가할 수 있는 유효한 모듈로 변환하는 역할을 한다.
+
+```js
+npm install --save-dev css-loader ts-loader
+```
+
+```jsx
+module.exports = {
+  module: {
+    rules: [
+      { test: /\.css$/, use: "css-loader" },
+      { test: /\.ts$/, use: "ts-loader" },
+    ],
+  },
+};
+```
+
+Plugins에서는 로더가 특정유형의 모듈을 변환하는데 사용이 되었다면 플러그인은 번들 최적화, asset관리, env삽입과 같은 광범위한 작업을 수행할 수 있다.
+
+```jsx
+const pluginName = "ConsoleLogOnBuildWebpackPlugin";
+
+class ConsoleLogOnBuildWebpackPlugin {
+  apply(compiler) {
+    compiler.hooks.run.tap(pluginName, (compilation) => {
+      console.log("The webpack build process is starting!");
+    });
+  }
+}
+
+module.exports = ConsoleLogOnBuildWebpackPlugin;
+```
+
+Mode에서는 development, production, none등이 있으며 각 환경에 해당하는 웹팩의 내장 최적화를 활성화 할 수 있다. 기본값은 production이다.
+
+```jsx
+module.exports = {
+  mode: "production",
+};
+```
+
+Browser Compatibility(브라우저 호환성)에서는 ES5를 준수하는 모든 브라우저를 지원하며 IE8 이하는 지원하지 않는다.
+
+Reference:
+
+[webpack](https://webpack.js.org/)
+[Webpack을 쓰는 이유](https://ingg.dev/webpack/)
+
+[🔝 목차로 돌아가기](#table-of-contents)
