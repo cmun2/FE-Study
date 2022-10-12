@@ -388,3 +388,17 @@ Reference:
 [🔝 목차로 돌아가기](#table-of-contents)
 
 ## 15
+
+HTTPS(Hypertext Transfer Protocol Secure)는 HTTP 프로토콜의 보안 버전이다. HTTP와는 달리 추가 암호화, 인증, 그리고 HTTP 프로토콜 통합 서비스를 제공한다. HTTP와 달리 HTTPS에서는 제 3자가 접근하거나 정보를 가로채려고 하는 행위를 방지할 수 있으며 웹 사이트의 SSL/TLS 증명서 포함하는 서버가 공개 키 암호화와 SSL/TLS Handshake등으로 암호화된 소통을 할 수 있다. 인증방식은 SSL/TLS 증명서에 해당 개인키(private key) 를 소유한 누군가가 디지털 서명했는지 확인하는 데 사용할 수 있는 공개키(public key) 가 포함되어 있다.
+
+서버의 인증서가 SSL.com과 같이 공개적으로 신뢰할 수 있는 인증기관(CA)에 의해 서명된 경우 브라우저는 인증서에 포함된 모든 식별 정보가 신뢰할 수 있는 제 3자에 의해 검증되어있음을 수락한다.
+
+HTTPS는 검색결과 엔진 최적화에도 포함이 된다. 특히 개인적으로 Lighthouse에서 SEO 점수를 최적화 하는데 https를 적용하는 것 또한 해당 지표 점수를 향상시키는데 큰 역할을 할 수 있다.
+
+Reference:
+
+[What is HTTPS?](https://www.ssl.com/faqs/what-is-https/#)
+
+[🔝 목차로 돌아가기](#table-of-contents)
+
+## 16
