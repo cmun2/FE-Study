@@ -439,3 +439,63 @@ Reference:
 [What is TCP?](https://www.fortinet.com/resources/cyberglossary/tcp-ip)
 
 [🔝 목차로 돌아가기](#table-of-contents)
+
+## 17
+
+TCP 특징
+
+> 연결형 서비스로 가상회선방식(회선방식과 비슷하게 논리적 경로설정 후에 사용자 데이터를 전송)을 제공
+> 데이터의 경계를 구분하지 않는다
+> 데이터의 전송 순서를 보장한다
+> UDP 보다 전송속도가 느리다
+> 신뢰성 있는 데이터를 전송한다
+
+UDP 특징
+
+> 비연결형 서비스로 데이터그램 방식(데이터를 전송하기 전에 논리적 연결이 설정되지 않으며 패킷이 독립적으로 전송)을 제공
+> 정보를 주고 받을 때 정보를 보내거나 받는다는 신호절차를 거치지 않는다
+> 신뢰성 없는 데이터를 전송한다
+> 데이터의 경계를 구분한다
+> TCP보다 전송 속도가 빠르다
+
+가장 큰 차이점은 TCP는 연속성보다는 신뢰성있는 전송이 중요할 때에 사용되는 프로토콜이며 UDP는 TCP보다 속도가 빠르며 네트워크 부하가 적다는 큰 강점이 있지만 신뢰성있는 데이터 전송을 보장하지 않는다는 치명적 결함이 있다. 그렇기에 신뢰성보다 연속성이 중요한 스트리밍(Streaming) 서비스에 주로 UDP가 사용된다.
+
+<details markdown="1">
+<summary>가상회선방식과 데이터그램방식</summary>
+
+<img src="./img/virtualCircuit.png" style="width:50%" />
+<img src="./img/datagram.png" style="width:50%" />
+
+</details>
+
+Reference:
+
+[가상회선 패킷 교환 vs 데이터그램 패킷 교환](https://woovictory.github.io/2018/12/28/Network-Packet-Switching-Method/)
+[TCP vs. UDP: What’s the Difference?](https://www.lifesize.com/en/blog/tcp-vs-udp/)
+
+[🔝 목차로 돌아가기](#table-of-contents)
+
+## 18
+
+간략하게 보면
+
+> 웹 사이트를 호스팅하는 웹 서버의 위치 조회
+> 웹 서버에 연결
+> 특정 페이지를 가져오기 위한 요청 전송
+> 웹 서버의 응답을 처리
+> 사용자가 웹 사이트와 상호 작용할 수 있도록 페이지를 렌더링하는 방법
+
+그리고 조금 더 깊게 들어간다면
+
+> 웹 브라우저에 URL을 입력하고 Enter 키를 누른다
+> 웹 브라우저가 도메인의 IP 주소를 조회 (먼저 캐시를 찾고, 그다음 DNS를 검색)
+> 웹 브라우저가 찾은 IP 주소를 기반으로 서버와의 TCP 연결을 시작
+> 웹 브라우저가 HTTP 요청을 서버로 전송 (필요한 경우, HTTPS 보안 통신이 진행)
+> 웹 서버가 요청을 처리하고 응답을 다시 웹 브라우저로 전송
+> 웹 브라우저가 전송 받은 콘텐츠를 렌더링
+
+Reference:
+
+[웹 브라우저에 URL을 입력하면 어떤 일이 생기나요?](https://aws.amazon.com/ko/blogs/korea/what-happens-when-you-type-a-url-into-your-browser/)
+
+[🔝 목차로 돌아가기](#table-of-contents)
