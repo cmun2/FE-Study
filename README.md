@@ -1,5 +1,7 @@
 # Basic Knowledge of Computer Science Study
 
+- [CS면접 Study](https://www.notion.so/CS-2ca6756425744f578ad4654a57ba073e)
+
 ## Table of Contents
 
 - [About](#About)
